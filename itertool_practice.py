@@ -48,16 +48,44 @@ Link
 https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap04/arms.html
 """
 
-def arm_nums(inputed_num):
-    arm_list = []
-    for digit in str(inputed_num):
-        arm_list.append(int(digit))
-    list_len = len(arm_list)
-    comp_list = map(lambda x: x**list_len, arm_list) #użycie funkcji lambda na liscie danych
-    comp_list_sum = sum(comp_list)
-    if comp_list_sum == inputed_num:
-        print('{} is Armstrong Number'.format(comp_list_sum))
+# def arm_nums(inputed_num):
+#     arm_list = []
+#     for digit in str(inputed_num):
+#         arm_list.append(int(digit))
+#     list_len = len(arm_list)
+#     comp_list = map(lambda x: x**list_len, arm_list) #użycie funkcji lambda na liscie danych
+#     comp_list_sum = sum(comp_list)
+#     if comp_list_sum == inputed_num:
+#         print('{} is Armstrong Number'.format(comp_list_sum))
 
 #Testowanie kodu
-for i in range(1,10000):
-    arm_nums(i)
+# for i in range(1,10000):
+#     arm_nums(i)
+
+#
+# def factorization(num):
+#     for i in range(1, num+1):
+#         if num % i == 0:
+#             print('{} is a factor'.format(i))
+# factorization(12)
+
+
+
+#Prime number generator
+
+def prime_number(prim_num):
+    factors = 0
+    prime_list = []
+
+    for i in range(1, prim_num+1):
+        if prim_num % i == 0:
+            prime_list.append(i)
+            factors += 1
+    print(factors)
+    if factors == 2:
+        print('{} is prime'.format(str(prim_num)))
+    else:
+        print('{} is not prime'.format(str(prim_num)))
+    print(prime_list)
+
+prime_number(100)
