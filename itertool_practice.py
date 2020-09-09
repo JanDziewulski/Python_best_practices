@@ -1,3 +1,4 @@
+#import numpy as np
 #Set jako element usprawniający pracę na listach danych
 
 # list_a = ['Bulbasaur', 'Charmander', 'Squirtle']
@@ -28,5 +29,35 @@ print(total_comp)
 
 #Sumowanie po wierszu za pomocą funkcji map
 
-total_map = [map(sum, poke_stats)]
-print(total_map)
+# total_map = [map(sum, poke_stats)]
+# print(total_map)
+#
+# print(poke_stats.mean(axis=1))
+
+# names = ['Absol', 'Aron', 'Jynx', 'Natu', 'Onix']
+# attacks = np.array([130, 70, 50, 50, 45])
+
+# print(zip(names,attacks))
+
+#Armstrong numbers
+"""
+Wyszukiwwanie licz będących liczbami Armstronga
+
+Link
+-----
+https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap04/arms.html
+"""
+
+def arm_nums(inputed_num):
+    arm_list = []
+    for digit in str(inputed_num):
+        arm_list.append(int(digit))
+    list_len = len(arm_list)
+    comp_list = map(lambda x: x**list_len, arm_list) #użycie funkcji lambda na liscie danych
+    comp_list_sum = sum(comp_list)
+    if comp_list_sum == inputed_num:
+        print('{} is Armstrong Number'.format(comp_list_sum))
+
+#Testowanie kodu
+for i in range(1,10000):
+    arm_nums(i)
