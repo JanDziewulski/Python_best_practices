@@ -73,19 +73,35 @@ https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap04/arms.html
 
 #Prime number generator
 
-def prime_number(prim_num):
+# def prime_number(prim_num):
+#     factors = 0
+#     prime_list = []
+#
+#     for i in range(1, prim_num+1):
+#         if prim_num % i == 0:
+#             prime_list.append(i)
+#             factors += 1
+#     print(factors)
+#     if factors == 2:
+#         print('{} is prime'.format(str(prim_num)))
+#     else:
+#         print('{} is not prime'.format(str(prim_num)))
+#     print(prime_list)
+
+import time
+#Prime number generator with nested loop
+
+insert_num = input('Proszę wprowadzić wartość int')
+start = time.time()
+prime_list = []
+for num in range(1, 101):
     factors = 0
-    prime_list = []
-
-    for i in range(1, prim_num+1):
-        if prim_num % i == 0:
-            prime_list.append(i)
+    for i in range(1, num + 1):
+        if num % i == 0:
             factors += 1
-    print(factors)
     if factors == 2:
-        print('{} is prime'.format(str(prim_num)))
-    else:
-        print('{} is not prime'.format(str(prim_num)))
-    print(prime_list)
-
-prime_number(100)
+        prime_list.append(num)
+end = time.time()
+print(prime_list)
+print(len(prime_list))
+print('Czas wykonania programu to {} (sekundy): '.format(end-start))
