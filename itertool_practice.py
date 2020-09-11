@@ -151,9 +151,11 @@ def col(d):
 
 def windowWide(d):
     row(d)
-    for i in range(1,6):
+    for i in range(1, 6):
         col(d)
     # return col(d)
+
+
 
 def window(w, h):
     for i in range(0, h):
@@ -161,5 +163,20 @@ def window(w, h):
     row(w)
 
 #Tesowanie funkcji
-window(3,5)
+window(3, 5)
 
+
+#-----------------------------------------------------#
+#String-counter
+
+def string_counter():
+    text = input("Wprowadź tekst dla którego chcesz wyszukiwać poszczególnego znaku: ")
+    letter = input("Wprowadź szukany znak: ")
+    count = 0
+    for i in text.lower():
+        if i == letter:
+            count += 1
+    print(count)
+
+#String-counter Test
+string_counter()
