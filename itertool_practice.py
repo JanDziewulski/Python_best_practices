@@ -125,22 +125,41 @@ https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap04/arms.html
 
 #-----------------------------------------------------#
 #Window function
-def columns(col_num):
-    for num in range (1,col_num):
-        print('x',end='')
-        for i in range(1,10):
-            print('-', end='')
-    print('x',end='')
+"""Zaproponowana funkcja wydaje się zbyt skomplikowana"""
+# def columns(col_num):
+#     for num in range (1,col_num):
+#         print('x',end='')
+#         for i in range(1,10):
+#             print('-', end='')
+#     print('x',end='')
+#
+# def row_num(row_num):
+#     for num in range (1,row_num):
+#         print('x',end='\n')
+#         for i in range(1,5):
+#             print('|', end='\n')
+#     print('x',end='\n')
 
-def row_num(row_num):
-    for num in range (1,row_num):
-        print('x',end='\n')
-        for i in range(1,5):
-            print('|', end='\n')
-    print('x',end='\n')
+#-----------------------------------------------------#
+#Window function - updated
 
-columns(3)
-row_num(4)
-row_num(4)
-row_num(4)
-columns(3)
+def row(d):
+    print('+'+d*'----------+')
+
+def col(d):
+    print('|'+d*'          |')
+
+def windowWide(d):
+    row(d)
+    for i in range(1,6):
+        col(d)
+    # return col(d)
+
+def window(w, h):
+    for i in range(0, h):
+        windowWide(w)
+    row(w)
+
+#Tesowanie funkcji
+window(3,5)
+
