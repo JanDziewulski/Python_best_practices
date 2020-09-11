@@ -88,20 +88,41 @@ https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap04/arms.html
 #         print('{} is not prime'.format(str(prim_num)))
 #     print(prime_list)
 
-import time
-#Prime number generator with nested loop
+# import time
+# #Prime number generator with nested loop
+#
+# insert_num = input('Proszę wprowadzić wartość int')
+# start = time.time()
+# prime_list = []
+# for num in range(1, 101):
+#     factors = 0
+#     for i in range(1, num + 1):
+#         if num % i == 0:
+#             factors += 1
+#     if factors == 2:
+#         prime_list.append(num)
+# end = time.time()
+# print(prime_list)
+# print(len(prime_list))
+# print('Czas wykonania programu to {} (sekundy): '.format(end-start))
 
-insert_num = input('Proszę wprowadzić wartość int')
-start = time.time()
-prime_list = []
-for num in range(1, 101):
-    factors = 0
-    for i in range(1, num + 1):
-        if num % i == 0:
-            factors += 1
-    if factors == 2:
-        prime_list.append(num)
-end = time.time()
-print(prime_list)
-print(len(prime_list))
-print('Czas wykonania programu to {} (sekundy): '.format(end-start))
+#-----------------------------------------------------#
+#Pyramid function
+#
+# for i in range(0,11):
+#     pyramid = '*' + i * '**'
+#     print(pyramid.center(21,' '))
+#
+
+# def pyramid_hight():
+#     hight = int(input('Wprowadź wysokość piramidy: '))
+#
+#     for i in range(0, hight):
+#         pyramid = '*' + i * '**'
+#         print(pyramid.center(2*hight, ' '))
+# #Tesowanie
+# pyramid_hight()
+
+#-----------------------------------------------------#
+#Window function
+
