@@ -125,4 +125,22 @@ https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap04/arms.html
 
 #-----------------------------------------------------#
 #Window function
+def columns(col_num):
+    for num in range (1,col_num):
+        print('x',end='')
+        for i in range(1,10):
+            print('-', end='')
+    print('x',end='')
 
+def row_num(row_num):
+    for num in range (1,row_num):
+        print('x',end='\n')
+        for i in range(1,5):
+            print('|', end='\n')
+    print('x',end='\n')
+
+columns(3)
+row_num(4)
+row_num(4)
+row_num(4)
+columns(3)
