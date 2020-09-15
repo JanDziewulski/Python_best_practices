@@ -163,7 +163,7 @@ def window(w, h):
     row(w)
 
 #Tesowanie funkcji
-window(3, 5)
+#window(3, 5)
 
 
 #-----------------------------------------------------#
@@ -179,4 +179,47 @@ def string_counter():
     print(count)
 
 #String-counter Test
-string_counter()
+#string_counter()
+
+
+def fix_capitalize(paragraph):
+    paragraph_list = list(paragraph)
+    paragraph_list.append(' ')
+    paragraph_list.append(' ')
+
+    paragraph_list[0] = paragraph_list[0].capitalize()
+    for i in range(0, len(paragraph_list)): #wyszukanie kropek
+        if paragraph_list[i] == '.':
+            print(i)
+            c = paragraph_list[i + 2]
+            c = c.capitalize()
+            paragraph_list[i + 2] = c
+    paragraph_list = ''.join(paragraph_list)
+    return(paragraph_list)
+
+
+p = "djokovic has been lock in an incredible rivalry ' \
+            'with Federer and Rafael Nadal for over a decade with them sharing an' \
+            ' astonishing 56 Grand Slam titles between them. it is Federer, though,' \
+            ' who currently leads the way with 20, three head of Djokovic, but Roccardo Piatti,' \
+            ' who worked with Djokovic earlier in his career, thinks all that is about to change."
+
+#Test
+fix_capitalize(p)
+
+#String counter
+
+import re
+
+def count_word(pattern, text):
+    pattern = pattern + '+'
+    print(pattern)
+    text = text.lower()
+    count = 0
+    for match in re.finditer(pattern, text):
+       count += 1
+    print('{} liczba powtórzen słowa {}'.format(count, pattern[:-1]))
+
+#Test
+# text = 'Stuff? Yes, man i like stuff. Stuffifaf, stuff!'
+# count_word('stuff', text)
