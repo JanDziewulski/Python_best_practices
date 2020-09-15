@@ -1,5 +1,5 @@
-#import numpy as np
-#Set jako element usprawniający pracę na listach danych
+# import numpy as np
+# Set jako element usprawniający pracę na listach danych
 
 # list_a = ['Bulbasaur', 'Charmander', 'Squirtle']
 # list_b = ['Caterpie', 'Pidgey', 'Squirtle']
@@ -9,7 +9,7 @@
 # print(set_a.difference(set_b))
 # print(set_a.union(set_b)) #pomijanie wielokrotnych wystąpień
 
-#Elimacja pętli
+# Elimacja pętli
 """Eliminacja pętli sprawi, że kod będzie bardziej czytelny i przejrzysty 'Flat is better than nested'"""
 
 poke_stats = [
@@ -17,17 +17,17 @@ poke_stats = [
     [25, 20, 15, 90],
     [65, 130, 60, 75]]
 
-#Sumowanie po wierszu za pomocą pętli
+# Sumowanie po wierszu za pomocą pętli
 totals = []
 for row in poke_stats:
     totals.append(sum(row))
 
 print(totals)
-#List comprehension - sumowanie po wierszu
+# List comprehension - sumowanie po wierszu
 total_comp = [sum(row) for row in poke_stats]
 print(total_comp)
 
-#Sumowanie po wierszu za pomocą funkcji map
+# Sumowanie po wierszu za pomocą funkcji map
 
 # total_map = [map(sum, poke_stats)]
 # print(total_map)
@@ -39,7 +39,7 @@ print(total_comp)
 
 # print(zip(names,attacks))
 
-#Armstrong numbers
+# Armstrong numbers
 """
 Wyszukiwwanie licz będących liczbami Armstronga
 
@@ -58,7 +58,7 @@ https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap04/arms.html
 #     if comp_list_sum == inputed_num:
 #         print('{} is Armstrong Number'.format(comp_list_sum))
 
-#Testowanie kodu
+# Testowanie kodu
 # for i in range(1,10000):
 #     arm_nums(i)
 
@@ -70,8 +70,7 @@ https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap04/arms.html
 # factorization(12)
 
 
-
-#Prime number generator
+# Prime number generator
 
 # def prime_number(prim_num):
 #     factors = 0
@@ -106,8 +105,8 @@ https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap04/arms.html
 # print(len(prime_list))
 # print('Czas wykonania programu to {} (sekundy): '.format(end-start))
 
-#-----------------------------------------------------#
-#Pyramid function
+# -----------------------------------------------------#
+# Pyramid function
 #
 # for i in range(0,11):
 #     pyramid = '*' + i * '**'
@@ -123,9 +122,11 @@ https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap04/arms.html
 # #Tesowanie
 # pyramid_hight()
 
-#-----------------------------------------------------#
-#Window function
+# -----------------------------------------------------#
+# Window function
 """Zaproponowana funkcja wydaje się zbyt skomplikowana"""
+
+
 # def columns(col_num):
 #     for num in range (1,col_num):
 #         print('x',end='')
@@ -140,14 +141,16 @@ https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap04/arms.html
 #             print('|', end='\n')
 #     print('x',end='\n')
 
-#-----------------------------------------------------#
-#Window function - updated
+# -----------------------------------------------------#
+# Window function - updated
 
 def row(d):
-    print('+'+d*'----------+')
+    print('+' + d * '----------+')
+
 
 def col(d):
-    print('|'+d*'          |')
+    print('|' + d * '          |')
+
 
 def windowWide(d):
     row(d)
@@ -156,18 +159,18 @@ def windowWide(d):
     # return col(d)
 
 
-
 def window(w, h):
     for i in range(0, h):
         windowWide(w)
     row(w)
 
-#Tesowanie funkcji
-#window(3, 5)
+
+# Tesowanie funkcji
+# window(3, 5)
 
 
-#-----------------------------------------------------#
-#String-counter
+# -----------------------------------------------------#
+# String-counter
 
 def string_counter():
     text = input("Wprowadź tekst dla którego chcesz wyszukiwać poszczególnego znaku: ")
@@ -178,8 +181,9 @@ def string_counter():
             count += 1
     print(count)
 
-#String-counter Test
-#string_counter()
+
+# String-counter Test
+# string_counter()
 
 
 def fix_capitalize(paragraph):
@@ -188,14 +192,14 @@ def fix_capitalize(paragraph):
     paragraph_list.append(' ')
 
     paragraph_list[0] = paragraph_list[0].capitalize()
-    for i in range(0, len(paragraph_list)): #wyszukanie kropek
+    for i in range(0, len(paragraph_list)):  # wyszukanie kropek
         if paragraph_list[i] == '.':
             print(i)
             c = paragraph_list[i + 2]
             c = c.capitalize()
             paragraph_list[i + 2] = c
     paragraph_list = ''.join(paragraph_list)
-    return(paragraph_list)
+    return (paragraph_list)
 
 
 p = "djokovic has been lock in an incredible rivalry ' \
@@ -204,12 +208,13 @@ p = "djokovic has been lock in an incredible rivalry ' \
             ' who currently leads the way with 20, three head of Djokovic, but Roccardo Piatti,' \
             ' who worked with Djokovic earlier in his career, thinks all that is about to change."
 
-#Test
+# Test
 fix_capitalize(p)
 
-#String counter
+# String counter
 
 import re
+
 
 def count_word(pattern, text):
     pattern = pattern + '+'
@@ -217,9 +222,47 @@ def count_word(pattern, text):
     text = text.lower()
     count = 0
     for match in re.finditer(pattern, text):
-       count += 1
+        count += 1
     print('{} liczba powtórzen słowa {}'.format(count, pattern[:-1]))
 
-#Test
+
+# Test
 # text = 'Stuff? Yes, man i like stuff. Stuffifaf, stuff!'
 # count_word('stuff', text)
+
+# -----------------------------------------------------#
+# Word Top 10 ranking - Harry Potter
+
+import string
+
+text = open('Harry_Potter.txt', 'r')
+text = text.read()
+words = []
+dictionary = {}
+
+def removePunctuation(st):
+    for c in string.punctuation:
+        st = st.replace(c, '')
+    return st
+
+def lowerSplit(st):
+    st = st.lower()
+    st = st.split()
+    return st
+
+def countWord(word, st):
+    count = st.count(word)
+    return count
+
+text = removePunctuation(text)
+text = lowerSplit(text)
+
+
+print(text)
+
+from collections import Counter
+
+cnt = Counter()
+for i in text:
+    cnt[i] += 1
+print(cnt.most_common(10))
